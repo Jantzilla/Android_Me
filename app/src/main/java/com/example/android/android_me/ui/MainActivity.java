@@ -19,6 +19,8 @@ package com.example.android.android_me.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.android.android_me.R;
@@ -68,7 +70,15 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
         final Intent intent = new Intent(this, AndroidMeActivity.class);
         intent.putExtras(b);
 
-        // TODO (4) Get a reference to the "Next" button and launch the intent when this button is clicked
+        // COMPLETED (4) Get a reference to the "Next" button and launch the intent when this button is clicked
+        Button button = (Button) findViewById(R.id.next_button);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intent);
+            }
+        });
 
     }
 
